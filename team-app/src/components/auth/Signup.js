@@ -15,6 +15,11 @@ import {
 export const Signup = () => {
   const [username, setUsername] = useState("");
   const [userpass, setUserpass] = useState("");
+
+  // setUsername = (e) => {
+  //   username = e.target.value;
+  //   console.log(username);
+  // };
   const formSubmit = () => {};
   return (
     <Box align="center" w="100%" h="100vh">
@@ -34,7 +39,11 @@ export const Signup = () => {
                   placeholder="Email"
                   m="5px"
                   bg="white"
-                  onChange={(e) => setUsername(console.log(e.target.value))}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+
+                    console.log(username);
+                  }}
                 />
                 <FormHelperText>We'll never share your email.</FormHelperText>
 
@@ -43,7 +52,11 @@ export const Signup = () => {
                   placeholder="password"
                   m="5px"
                   bg="white"
-                  onChange={(e) => setUserpass(console.log(e.target.value))}
+                  onChange={(e) => {
+                    setUserpass(e.target.value);
+
+                    console.log(userpass);
+                  }}
                 />
                 <Button colorScheme="teal" type="submit" onClick={formSubmit}>
                   SignUp
